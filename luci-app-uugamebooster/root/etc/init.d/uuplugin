@@ -8,12 +8,12 @@ PROG="/var/tmp/uu/uuplugin"
 UU_CONF="/var/tmp/uu/uu.conf"
 UU_INFO="/var/tmp/uu/h3c_info"
 UU_SN="/tmp/haiapi"
-armuurl="https://router.uu.163.com/api/plugin?type=h3c-bx54"
+armuurl="https://router.uu.163.com/api/plugin?type=openwrt-arm"
 #armuurl="https://router.uu.163.com/api/plugin?type=h3c-ne36"
-aarch64uurl="https://router.uu.163.com/api/plugin?type=h3c-nx30pro"
+aarch64uurl="https://router.uu.163.com/api/plugin?type=openwrt-aarch64"
 #mipsuurl="https://router.uu.163.com/api/plugin?type=h3c-nx15"
 #mipseluurl="https://router.uu.163.com/api/plugin?type=h3c"
-mipseluurl="https://router.uu.163.com/api/plugin?type=jd-hr06"
+mipseluurl="https://router.uu.163.com/api/plugin?type=openwrt-mipsel"
 SN=$(ip addr show br-lan | grep "link/ether" | awk '{print $2}')
 
 start_service() {
@@ -71,13 +71,13 @@ start_service() {
 	  if [ -z "$UU_url" ]; then
 	    case "$cpucore" in
 	      arm)
-	        UU_url="http://uu.gdl.netease.com/uuplugin/h3c-bx54/v6.3.12/uu.tar.gz,56c6a0a5ed99c05d933091fc0b1c7d8c"
+	        UU_url="http://uurouter.gdl.netease.com/uuplugin/openwrt-arm/v14.2.2/uu.tar.gz?key1=884f103bee8258a421d4ea59f27598d8&key2=6a764c2e"
 	        ;;
 	      aarch64)
-	        UU_url="http://uu.gdl.netease.com/uuplugin/h3c-nx30pro/v6.3.12/uu.tar.gz,059dda9bf2803fe3f32b1d48e6b5c6d3"
+	        UU_url="http://uurouter.gdl.netease.com/uuplugin/openwrt-aarch64/v14.2.2/uu.tar.gz?key1=21661faac05d294c60a7646098b98f5c&key2=6a764a17"
 	        ;;
 	      mipsel)
-	        UU_url="http://uu.gdl.netease.com/uuplugin/jd-hr06/v6.3.10/uu.tar.gz,b4535b953b982bd8909d83da719e21b1"
+	        UU_url="http://uurouter.gdl.netease.com/uuplugin/openwrt-mipsel/v14.2.2/uu.tar.gz?key1=f5a0708ed76057fb33aa075c982bc39d&key2=6a764bee"
 	        ;;
 	    esac
 	  fi
