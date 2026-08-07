@@ -1,4 +1,4 @@
-name: 打包UU加速器
+name: 打包UU加速器mediatek-filogic
 
 on:
   push:
